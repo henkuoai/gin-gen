@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gin CRUD 代码生成器</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gin CRUD 代码生成器</h1>
+        
+        <form action="/generate" method="post">
+            <div class="form-group">
+                <label for="project_name">项目名称</label>
+                <input type="text" id="project_name" name="project_name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="module_name">Go模块名称</label>
+                <input type="text" id="module_name" name="module_name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="port">API端口</label>
+                <input type="text" id="port" name="port" value="8080" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="models">模型定义</label>
+                <textarea id="models" name="models" rows="10" required></textarea>
+                <div class="help-text">
+                    <p>格式示例：</p>
+                    <pre>User
+id int gorm:"primaryKey"
+name string required
+email string required gorm:"unique"
+age int
+</pre>
+                    <p>每行格式: [字段名] [类型] [标签]</p>
+                </div>
+            </div>
+            
+            <button type="submit">生成项目</button>
+        </form>
+    </div>
+</body>
+</html>

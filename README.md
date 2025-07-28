@@ -1,2 +1,2 @@
-# gin-gen
-gin框架的快捷crud生成器
+# gin项目的curd代码快捷生成$
+
